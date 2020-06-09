@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'UserController@index')->name('users');
+Route::resource('user', 'UserController')->except(['index', 'show']);
+Route::get('/autocomplete/fetch', 'AutocompleteController@fetch')->name('autocomplete.fetch');
 
-Route::get('/', function () {
-    return view('welcome');
-});
